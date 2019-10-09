@@ -11,12 +11,13 @@ Group project for CSCI 4830
 4. Locate the CSCI4830 repo.
 5. Clone it to your computer.
 6. Open Eclipse. 
-7. Create a new workspace **Do not create the workspace in the CSCI4830 folder you just cloned**
+7. Create a new workspace <span style="color:red">**Do not create the workspace in the CSCI4830 folder you just cloned**</span>
 8. Create a new webproject just like we do in class. 
 9. Use Apache 7.0 as the runtime. 
 10. Open the CSCI4830 repo folder. 
 11. Drag and drop the folders into the eclipse project explorer. 
-12. **Choose `Link to Folders/Files`.**
+    
+12. <span style="color:red"><b> Choose "Link to Folders/Files". </b></span>
 13. Choose `Overwrite all`. 
 14. Now any changes you make will be in the repo folder. 
 
