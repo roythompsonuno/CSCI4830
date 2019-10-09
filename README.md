@@ -18,5 +18,12 @@ Group project for CSCI 4830
 4. Name the branch `feature/your-branch-name`.
 5. Implement the feature or make any changes to the code.
 6. Changes will show up in the `Changes` section. Any file that contains passwords or other sensitive information should be right clicked and `add to .gitignore`. 
-7. Commit changes incrementally as you work. After committing anything, click `push origin` to publish to the origin. 
-8. When you have tested your work, 
+7. Commit changes incrementally as you work. After committing anything, click `push origin` to publish to the origin.
+
+## Merging with Master
+
+1. When you have tested your work and are ready to have the code added to the Master branch, click `Create Pull Request`. 
+2. Complete the form.
+3. If there are conflicts, resolve them.
+4. Click `Create pull request`. 
+5. If everything looks good, click `Merge Pull Request`. 
