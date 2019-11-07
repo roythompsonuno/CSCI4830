@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>User Support</title>
+    <title>Support Ticket</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab">
@@ -48,80 +48,83 @@
                     </ul>
             </div>
             </nav>
+            <div class="row">
+                <div class="col"></div>
+                <div class="col"></div>
+            </div>
             <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="col-5">
-                        <h2 class="text-left d-lg-flex justify-content-lg align-items-lg-start" style="font-family: 'Roboto Slab', serif;">My Requests</h2>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="clearfix"></div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="btn-toolbar">
-                            <div class="btn-group" role="group"></div>
+                <form>
+                    <div class="form-row">
+                        <div class="col">
+                            <div class="form-group"><label>First Name:</label><input class="form-control" type="text"></div>
+                            <div class="form-group"><label>Last Name:&nbsp;</label><input class="form-control" type="text"></div>
+                        </div>
+                        <div class="col-3"></div>
+                        <div class="col"><label>Category:&nbsp;</label><select class="form-control"><optgroup label="Category"><option value="12" selected="">Software(Windows)</option><option value="13">Software(Mac)</option><option value="14">Hardware</option></optgroup></select><label>Status:</label>
+                            <select
+                                class="form-control">
+                                <optgroup label="Status">
+                                    <option value="12" selected="">Open</option>
+                                    <option value="13">Closed</option>
+                                </optgroup>
+                                </select>
                         </div>
                     </div>
-                </div>
-                <div class="row flex-grow-1 flex-shrink-1">
-                    <div class="col-10">
-                        <div class="card flex-grow-1 flex-shrink-1">
-                            <div class="card-body flex-grow-1 flex-shrink-1" style="width: 750px;">
-                                <ul class="list-group"></ul>
-                                <div class="table-responsive table-bordered flex-grow-1 flex-shrink-1">
-                                    <table class="table table-striped table-bordered table-sm">
-                                        <thead class="text-monospace">
-                                            <tr class="border rounded">
-                                                <th style="width: 100px;font-family: 'Roboto Slab', serif;">Ticket #</th>
-                                                <th style="font-family: 'Roboto Slab', serif;">Notes</th>
-                                                <th style="font-family: 'Roboto Slab', serif;">Open</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="flex-grow-1 flex-shrink-1">
-                                            <tr>
-                                                <td>0000000</td>
-                                                <td>The notes about this ticket could include a simple summary.</td>
-                                                <td class="text-center"><a class="btn btn-primary text-center btn-circle ml-1" role="button"><i class="fas fa-info-circle text-white"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>0000001</td>
-                                                <td>I have multiple problems.</td>
-                                                <td class="text-center"><a class="btn btn-primary btn-circle ml-1" role="button"><i class="fas fa-info-circle text-white"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>0000002</td>
-                                                <td></td>
-                                                <td class="text-center"><a class="btn btn-primary btn-circle ml-1" role="button"><i class="fas fa-info-circle text-white"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>0000003</td>
-                                                <td></td>
-                                                <td class="text-center"><a class="btn btn-primary btn-circle ml-1" role="button"><i class="fas fa-info-circle text-white"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>0000004</td>
-                                                <td></td>
-                                                <td class="text-center"><a class="btn btn-primary btn-circle ml-1" role="button"><i class="fas fa-info-circle text-white"></i></a></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                    <div class="form-row">
+                        <div class="col"><label>Description:&nbsp;</label><textarea class="form-control"></textarea></div>
+                        <div class="col">
+                            <div class="form-group"><label>Solution:&nbsp;</label><textarea class="form-control"></textarea></div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <div class="table-responsive">
+                                <table class="table table-sm">
+                                    <thead>
+                                        <tr>
+                                            <th>Log:</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Cell 1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cell 3</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
+                        <div class="col-2 text-right align-self-center"><button class="btn btn-primary btn-lg" type="button" style="margin-bottom: 5px;">Update</button>
+                            <div class="clearfix"></div><button class="btn btn-success btn-lg" type="button">Save</button></div>
+                        <div class="col-2 align-self-center">
+                            <div class="dropup"><button class="btn btn-secondary btn-lg dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button" style="margin-bottom: 5px;">Transfer&nbsp;</button>
+                                <div class="dropdown-menu text-center" role="menu">
+                                    <form method="post">
+                                        <div class="form-group"><label>User:<select class="form-control"><optgroup label="This is a group"><option value="12" selected="">This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></label></div>
+                                        <div
+                                            class="form-group"><label>Group:<select class="form-control"><optgroup label="This is a group"><option value="12" selected="">This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></label></div>
+                                <div
+                                    class="btn-group btn-group-sm" role="group"><button class="btn btn-success btn-sm" type="submit">Confirm</button><button class="btn btn-warning btn-sm" type="reset">Cancel</button></div>
+                            </form>
+                        </div>
                     </div>
-                    <div class="col-2"><button class="btn btn-success btn-block d-lg-flex" type="button" style="height: 60px;">Submit &nbsp;Ticket</button></div>
-                </div>
-            </div>
+                    <div class="clearfix"></div><button class="btn btn-danger btn-lg" type="button">Cancel</button></div>
         </div>
-        <footer class="bg-white sticky-footer">
-            <div class="container my-auto">
-                <div class="text-center my-auto copyright"><span>Copyright © G8 Development 2019</span></div>
-            </div>
-        </footer>
+        </form>
+    </div>
+    </div>
+    <footer class="bg-white sticky-footer">
+        <div class="container my-auto">
+            <div class="text-center my-auto copyright"><span>Copyright © G8 Development 2019</span></div>
+        </div>
+    </footer>
     </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+    <script src="assets/js/bs-charts.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
     <script src="assets/js/theme.js"></script>
 </body>
