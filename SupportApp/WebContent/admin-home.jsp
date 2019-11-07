@@ -50,7 +50,7 @@
             </nav>
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-4"><a class="btn btn-primary btn-block btn-lg" role="button" style="height: 60px;" href="admin-ticket.html">Create Ticket</a></div>
+                    <div class="col-4"><a class="btn btn-primary btn-block btn-lg" role="button" style="height: 60px;" href="admin-ticket.jsp">Create Ticket</a></div>
                     <div class="col-4 offset-0"><input class="form-control-lg" type="search" name="Search Tickets" placeholder="Search" style="width: 300px;height: 60px;"></div>
                     <div class="col"></div>
                 </div>

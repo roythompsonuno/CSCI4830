@@ -110,7 +110,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-2 text-center"><a class="btn btn-success btn-block d-lg-flex" role="button" style="height: 60px;" href="user-ticket.html">Submit &nbsp;Ticket</a>
+                    <div class="col-2 text-center"><a class="btn btn-success btn-block d-lg-flex" role="button" style="height: 60px;" href="user-ticket.jsp">Submit &nbsp;Ticket</a>
                         <div class="row"></div>
                         <div class="card shadow border-left-warning py-2">
                             <div class="card-body">
