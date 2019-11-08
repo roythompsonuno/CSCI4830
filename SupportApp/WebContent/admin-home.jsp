@@ -1,12 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+
+<%@ page import="java.sql.*, javax.sql.*, java.io.*, javax.naming.*" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
+
 <!DOCTYPE html>
+
+
+    				
 <html>
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Dashboard - Brand</title>
+    <title>Admin-Home</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab">
@@ -64,6 +70,15 @@
                         </div>
                     </div>
                 </div>
+                                
+   <sql:setDataSource var = "test" url = "jdbc:mysql://ssh.roythompson.net:3306/TestConn"
+       driver = "com.mysql.cj.jdbc.Driver"
+       user="newmysqlremoteuser" password="mypassword" />
+                   
+   <sql:query dataSource ="${test}" var = "result">
+    	SELECT * FROM TestTicket;
+   </sql:query>				
+					
                 <div class="row">
                     <div class="col">
                         <div class="card">
@@ -80,19 +95,14 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        <c:forEach var = "row" items = "${result.rows}">
                                             <tr>
-                                                <td>0000000</td>
-                                                <td>John Doe</td>
-                                                <td>The notes about this ticket could include a simple summary.</td>
-                                                <td>1</td>
+                                                <td><c:out value = "${row.tNum}"/></td>
+                                                <td><c:out value = "${row.Name}"/></td>
+                                                <td><c:out value = "${row.Notes}"/></td>
+                                                <td><c:out value = "${row.Prio}"/></td>
                                             </tr>
-                                            <tr>
-                                                <td>0000001</td>
-                                                <td>John Doe</td>
-                                                <td>This customer has multiple problems.</td>
-                                                <td>3</td>
-                                            </tr>
-                                            <tr></tr>
+                                        </c:forEach>
                                         </tbody>
                                     </table>
                                 </div>
@@ -120,7 +130,7 @@
         </div>
         <footer class="bg-white sticky-footer">
             <div class="container my-auto">
-                <div class="text-center my-auto copyright"><span>Copyright Â© G8 Development 2019</span></div>
+                <div class="text-center my-auto copyright"><span>Copyright © G8 Development 2019</span></div>
             </div>
         </footer>
     </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a></div>
