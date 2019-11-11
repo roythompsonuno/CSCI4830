@@ -1,0 +1,25 @@
+@charset "ISO-8859-1";
+
+.header{
+	border: 1px solid;
+	display: block;
+	text-align: center;
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.main_nav {
+	display: block;
+	border: 1px solid;
+	text-align: center;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+.data{
+	text-align: center;
+	border: 1px solid black;
+}
