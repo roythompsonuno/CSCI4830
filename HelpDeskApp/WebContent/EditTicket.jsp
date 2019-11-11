@@ -23,6 +23,11 @@
 		ticket = (Ticket) session.getAttribute("ticket");
 		int transfer = 0, update = 0, closed = 0, resolved = 0;
 		
+		if(ticket.getDescription() != null)
+		{
+			desc = ticket.getDescription();
+		}
+		
 		if(Integer.parseInt(request.getParameter("impact")) != ticket.getImpactID())
 		{
 			update++;
@@ -45,11 +50,11 @@
 			}
 			else if(action == 4)
 			{
-				closed++;
+				resolved++;
 			}
 			else
 			{
-				resolved++;
+				closed++;
 			}
 			
 			ticket.updateTicket("Status_ID", request.getParameter("stat"));
@@ -99,7 +104,7 @@
 				ticket.addLog(4);
 			}
 			
-			ticket.getTicket(Integer.toString(ticket.getUserID()));
+			ticket.getTicket(Integer.toString(ticket.getTicketID()));
 			session.setAttribute("ticket", (Ticket) ticket);
 		}
 	}
