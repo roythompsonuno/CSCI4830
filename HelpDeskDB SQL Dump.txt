@@ -1,0 +1,97 @@
+CREATE DATABASE HelpDeskDB;
+USE HelpDeskDB;
+CREATE TABLE Ticket(
+	Ticket_Number INT NOT NULL AUTO_INCREMENT,
+	Submit_Date DATE NOT NULL,
+	Summary VARCHAR(50) NOT NULL,
+	Description VARCHAR(200),
+	Impact_ID INT NOT NULL,
+	Category_ID INT NOT NULL,
+	Status_ID INT NOT NULL,
+	User_ID INT NOT NULL,
+	Assignee INT,
+	PRIMARY KEY(Ticket_Number));
+CREATE TABLE Log(
+	Log_ID INT NOT NULL AUTO_INCREMENT,
+	Log_Date DATETIME NOT NULL,
+	Action_ID INT NOT NULL,
+	Ticket_Number INT NOT NULL,
+	PRIMARY KEY(Log_ID));
+CREATE TABLE Action(
+	Action_ID INT NOT NULL AUTO_INCREMENT,
+	Action_Name VARCHAR(20),
+	PRIMARY KEY(Action_ID));
+CREATE TABLE Impact(
+	Impact_ID INT NOT NULL AUTO_INCREMENT,
+	Impact_Name VARCHAR(20) NOT NULL,
+	PRIMARY KEY(Impact_ID));
+CREATE TABLE Category(
+	Category_ID INT NOT NULL AUTO_INCREMENT,
+	Category_Name VARCHAR(20) NOT NULL,
+	PRIMARY KEY(Category_ID));
+CREATE TABLE Status(
+	Status_ID INT NOT NULL AUTO_INCREMENT,
+	Status_Name VARCHAR(20),
+	PRIMARY KEY(Status_ID));
+CREATE TABLE User(
+	User_ID INT NOT NULL AUTO_INCREMENT,
+	Password VARCHAR(20) NOT NULL,
+	First_Name VARCHAR(20) NOT NULL,
+	Last_Name VARCHAR(20) NOT NULL,
+	Phone_Number VARCHAR(20) NOT NULL,
+	Email_Address VARCHAR(20) NOT NULL,
+	Role_ID INT NOT NULL,
+	PRIMARY KEY(User_ID));
+CREATE TABLE Role(
+	Role_ID INT NOT NULL AUTO_INCREMENT,
+	Role_Name VARCHAR(20) NOT NULL,
+	Group_ID INT NOT NULL,
+	PRIMARY KEY(Role_ID));
+CREATE TABLE User_Group(
+	Group_ID INT NOT NULL AUTO_INCREMENT,
+	Group_Name VARCHAR(20) NOT NULL,
+	PRIMARY KEY(Group_ID));
+
+INSERT INTO User_Group VALUES( DEFAULT, "End User");
+INSERT INTO User_Group VALUES( DEFAULT, "Support");
+INSERT INTO User_Group VALUES( DEFAULT, "Admin");
+
+INSERT INTO Role VALUES( DEFAULT, "End User", 1);
+INSERT INTO Role VALUES( DEFAULT, "Hardware Support", 2);
+INSERT INTO Role VALUES( DEFAULT, "Software Support", 2);
+INSERT INTO Role VALUES( DEFAULT, "Administrator", 3);
+
+INSERT INTO Impact VALUES( DEFAULT, "Low");
+INSERT INTO Impact VALUES( DEFAULT, "Medium");
+INSERT INTO Impact VALUES( DEFAULT, "High");
+
+INSERT INTO Category VALUES( DEFAULT, "Software Issue");
+INSERT INTO Category VALUES( DEFAULT, "Hardware Issue");
+INSERT INTO Category VALUES( DEFAULT, "Profile Issue");
+
+INSERT INTO Status VALUES(DEFAULT, "Not Assigned");
+INSERT INTO Status VALUES(DEFAULT, "Assigned");
+INSERT INTO Status VALUES(DEFAULT, "In Progress");
+INSERT INTO Status VALUES(DEFAULT, "Resolved");
+INSERT INTO Status VALUES(DEFAULT, "Closed");
+
+INSERT INTO Action Values( DEFAULT, "Transfer");
+INSERT INTO Action Values( DEFAULT, "Update");
+INSERT INTO Action Values( DEFAULT, "Closed");
+INSERT INTO Action Values( DEFAULT, "Resolved");
+
+INSERT INTO Log Values( DEFAULT, NOW(), 1, 1);
+INSERT INTO Log Values( DEFAULT, NOW(), 1, 2);
+INSERT INTO Log Values( DEFAULT, NOW(), 2, 2);
+INSERT INTO Log Values( DEFAULT, NOW(), 3, 2);
+
+INSERT INTO User VALUES( DEFAULT, "123", "JON", "TRON", "123-123-1234", "JonTron@Test.com", 1);
+INSERT INTO User VALUES( DEFAULT, "123", "BILLIE", "GOAT", "234-234-2345", "BillieGoat@Test.com", 2);
+INSERT INTO User VALUES( DEFAULT, "123", "TIK", "TOK", "345-345-3456", "TikTok@Test.com", 3);
+
+INSERT INTO Ticket VALUES( DEFAULT, NOW(), "Test Summary 1",
+	"Test Problem 1", 1, 1, 2, 1, 2);
+INSERT INTO Ticket VALUES( DEFAULT, NOW(), "Test Summary 2",
+	"Test Problem 2", 2, 2, 3, 2, 3);
+INSERT INTO Ticket VALUES( DEFAULT, NOW(), "Test Summary 3",
+	NULL, 3, 3, 1, 3, SSE);
