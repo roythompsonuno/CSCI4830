@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
    
 <%@ page import="Manager.User" %>
-<%@ include file="Header.jsp" %>
+<%@ include file="Nav2.jsp" %>
 <%
 	if(session.getAttribute("isLoggedIn") != null)
 	{

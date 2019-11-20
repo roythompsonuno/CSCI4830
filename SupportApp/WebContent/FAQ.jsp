@@ -3,5 +3,8 @@
 <%@ include file="Header.jsp" %>
 
 	<h1>TO BE ADDED</h1>
+    			</div>
+        	</div>
+    	</div>
 	</body>
 </html>

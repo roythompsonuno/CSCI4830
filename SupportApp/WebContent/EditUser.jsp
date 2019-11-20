@@ -95,5 +95,8 @@
 				<h3 style="align: center"><button name="removeUser" type="submit" value="0">Remove User</button></h3>
 			</form>
 		</div>
+    			</div>
+        	</div>
+    	</div>
 	</body>
 </html>

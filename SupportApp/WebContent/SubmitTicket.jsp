@@ -55,4 +55,8 @@
 				<h3 style="align: center"><button name="submit" type="submit" value="0">Save Ticket</button></h3>
 			</form>
 		</div>
+    			</div>
+        	</div>
+    	</div>
+    </body>
 </html>
