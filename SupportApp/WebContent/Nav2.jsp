@@ -60,7 +60,7 @@
 			   %>	<li class="nav-item" role="presentation"><a class="nav-link" href="LoginE.jsp" style="padding-bottom: 2px;padding-top: 16px;">Login</a></li>
 			  <% } %>
                 </ul>
-                <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
+                <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" data-toggle="collapse" id="sidebarToggle" type="button"></button></div>
             </div>
         </nav>
         <div class="d-flex flex-column" id="content-wrapper">
