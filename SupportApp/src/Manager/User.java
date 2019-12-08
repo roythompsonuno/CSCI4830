@@ -219,7 +219,7 @@ public class User {
 						"</td><td class=\"data\">" + results.getString("Status_Name") + "</td>");
 				if(isSupport())
 				{
-					out.print("<td class=\"data\"><form action=\"EditTicket.jsp\" method=\"post\">" +
+					out.print("<td class=\"data\"><form action=\"EditTicketE.jsp\" method=\"post\">" +
 							"<button name=\"edit\" type=\"submit\" value=\""+ results.getInt("Ticket_Number") +"\">Edit</button>" +
 							"</form></td>");
 				}
@@ -287,7 +287,7 @@ public class User {
 						"</td><td class=\"data\">" + results.getString("Status_Name") + "</td>");
 				if(isSupport())
 				{
-					out.print("<td class=\"data\"><form action=\"EditTicket.jsp\" method=\"post\">" +
+					out.print("<td class=\"data\"><form action=\"EditTicketE.jsp\" method=\"post\">" +
 							"<button name=\"edit\" type=\"submit\" value=\""+ results.getInt("Ticket_Number") +"\">Edit</button>" +
 							"</form></td>");
 				}
@@ -373,7 +373,7 @@ public class User {
 				out.print("<tr><td class=\"data\">"+ results.getInt("User_ID") +
 						"</td><td class=\"data\">" + results.getString("Last_Name") + ", " + results.getString("First_Name") +
 						"</td><td class=\"data\">" + results.getString("Role_Name") +
-						"</td><td class=\"data\"><form action=\"EditUser.jsp\" method=\"post\">" +
+						"</td><td class=\"data\"><form action=\"EditUserE.jsp\" method=\"post\">" +
 							"<button name=\"edituser\" type=\"submit\" value=\""+ results.getInt("User_ID") +"\">Edit</button>" +
 							"</form></td></tr>");
 			}

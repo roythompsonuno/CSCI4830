@@ -43,17 +43,17 @@
 				if(isLoggedIn)
 				{	%>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="ProfileE.jsp" style="padding-bottom: 2px;padding-top: 16px;"><span>Profile</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="ViewTicket.jsp" style="padding-bottom: 2px;padding-top: 2px;"><span>View Ticket</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="SubmitTicket.jsp" style="padding-top: 2px;padding-bottom: 2px;"><span>Submit Ticket</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="ViewTicketE.jsp" style="padding-bottom: 2px;padding-top: 2px;"><span>View Ticket</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="SubmitTicketE.jsp" style="padding-top: 2px;padding-bottom: 2px;"><span>Submit Ticket</span></a></li>
                     <%
 						if(isAdmin)
 						{
 							%>
-                    		<li class="nav-item" role="presentation"><a class="nav-link" href="AddRemoveUser.jsp" style="padding-top: 2px;padding-bottom: 2px;"><span>Add/Remove User</span></a></li>
+                    		<li class="nav-item" role="presentation"><a class="nav-link" href="AddRemoveUserE.jsp" style="padding-top: 2px;padding-bottom: 2px;"><span>Add/Remove User</span></a></li>
                     		<%
 						}
 					%>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="FAQ.jsp" style="padding-top: 2px;padding-bottom: 2px;"><span>FAQ</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="FAQE.jsp" style="padding-top: 2px;padding-bottom: 2px;"><span>FAQ</span></a></li>
                <%}
 				 else
 				 {

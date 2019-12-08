@@ -8,7 +8,7 @@
 	{
 		if((Boolean) session.getAttribute("isLoggedIn"))
 		{
-			response.sendRedirect("ViewTicket.jsp");
+			response.sendRedirect("ViewTicketE.jsp");
 		}
 	}
 
@@ -28,7 +28,7 @@
 		{
 			session.setAttribute("isLoggedIn", true);
 			session.setAttribute("user", user);
-			response.sendRedirect("ViewTicket.jsp");
+			response.sendRedirect("ViewTicketE.jsp");
 		}
 		else
 		{

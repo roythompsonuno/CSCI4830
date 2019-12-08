@@ -4,11 +4,44 @@
 <%@ include file="Nav2.jsp" %>
 <%@ page import="Manager.User" %>
 
-<!DOCTYPE html>
-<html>
+<%
+	User user = new User();
+	String message = "";
+	if(request.getParameter("addUser") != null)
+	{
+		if(request.getParameter("fName").equals(""))
+		{
+			message = "First Name is required.";
+		}
+		else if(request.getParameter("lName").equals(""))
+		{
+			message = "Last Name is required.";
+		}
+		else if(request.getParameter("phone").equals(""))
+		{
+			message = "Phone Number is required.";
+		}
+		else if(request.getParameter("email").equals(""))
+		{
+			message = "Email Address is required.";
+		}
+		else if(request.getParameter("pass").equals(""))
+		{
+			message = "Password is required.";
+		}
+		else
+		{
+			user.setfName(request.getParameter("fName"));
+			user.setlName(request.getParameter("lName"));
+			user.setEmail(request.getParameter("email"));
+			user.setPhone(request.getParameter("phone"));
+			user.setPassword(request.getParameter("pass"));
+			user.setRoleID(Integer.parseInt(request.getParameter("role")));
+			user.addNewUser();
+		}		
+	}
+%>
 
-
-<body id="page-top" style="font-family: 'Roboto Slab', serif;">
     <div id="wrapper">
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
@@ -40,18 +73,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td class="text-center">1</td>
-                                                    <td class="text-center">Yumul, Bryson</td>
-                                                    <td class="text-center">End User</td>
-                                                    <td class="text-center"><button class="btn btn-warning" type="button">Edit</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center">2</td>
-                                                    <td class="text-center">Thompson, Roy</td>
-                                                    <td class="text-center">Admin</td>
-                                                    <td class="text-center"><button class="btn btn-warning" type="button">Edit</button></td>
-                                                </tr>
+												<% user.getUserList(out); %>
                                             </tbody>
                                         </table>
                                     </div>
@@ -61,13 +83,13 @@
                                     <form>
                                         <div class="form-row">
                                             <div class="col">
-                                                <div class="form-group"><label><strong>First Name:</strong></label><input class="form-control" type="text" name="fname" inputmode="latin-name" required=""></div>
+                                                <div class="form-group"><label><strong>First Name:</strong></label><input class="form-control" type="text" name="fName" inputmode="latin-name" required=""></div>
                                                 <div class="form-group"><label><strong>Phone Number:</strong></label><input class="form-control" type="tel" name="phone" required="" inputmode="tel"></div>
-                                                <div class="form-group"><label><strong>Password</strong>:</label><input class="form-control" type="password"></div><button class="btn btn-success btn-block" type="submit">Add User</button></div>
+                                                <div class="form-group"><label><strong>Password</strong>:</label><input class="form-control" type="password" name= "pass"></div><button class="btn btn-success btn-block" name="addUser" type="submit">Add User</button></div>
                                             <div class="col">
-                                                <div class="form-group"><label><strong>Last Name:</strong></label><input class="form-control" type="text" name="lname"></div>
-                                                <div class="form-group"><label><strong>Email Address:</strong></label><input class="form-control" type="email"></div>
-                                                <div class="form-group"><label><strong>Role:</strong></label><select class="form-control" name="role"><optgroup label="Role"><option value="12" selected="">End User</option><option value="13">Hardware Support</option><option value="14">Software Support</option><option value="15">Administrator</option></optgroup></select></div>
+                                                <div class="form-group"><label><strong>Last Name:</strong></label><input class="form-control" type="text" name="lName"></div>
+                                                <div class="form-group"><label><strong>Email Address:</strong></label><input class="form-control" type="email" name="email"></div>
+                                                <div class="form-group"><label><strong>Role:</strong></label><select class="form-control" name="role"><%user.getList(out, "Role", 0); %></select></div>
                                             </div>
                                         </div>
                                     </form>
@@ -79,7 +101,7 @@
             </div>
             <footer class="bg-white sticky-footer">
                 <div class="container my-auto">
-                    <div class="text-center my-auto copyright"><span>Copyright Â© G8 Development 2019</span></div>
+                    <div class="text-center my-auto copyright"><span>Copyright © G8 Development 2019</span></div>
                 </div>
             </footer>
         </div>
@@ -90,6 +112,8 @@
     <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
     <script src="assets/js/theme.js"></script>
-</body>
-
+        		</div>
+        	</div>
+    	</div>
+	</body>
 </html>

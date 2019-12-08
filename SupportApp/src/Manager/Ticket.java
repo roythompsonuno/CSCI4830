@@ -205,7 +205,7 @@ public class Ticket
 		}
 	}
 	
-	public String getUserName()
+	public String getUserName(int choice)
 	{
 		Connection connect = null;
 		PreparedStatement prepStatement = null;
@@ -221,8 +221,10 @@ public class Ticket
 			ResultSet results = prepStatement.executeQuery();
 			
 			results.next();		
-			
-			name = results.getString(2) + ", " + results.getString(1);
+			if( choice == 1)
+				name = results.getString(1);
+			else
+				name = results.getString(2);
 			
 			results.close();
 	        prepStatement.close();
