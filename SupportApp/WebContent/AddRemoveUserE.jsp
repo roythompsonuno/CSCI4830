@@ -80,7 +80,7 @@
                                 </div>
                                 <div class="card-body bg-light border rounded">
                                     <h2 class="text-center text-primary card-title">Add New User</h2>
-                                    <form>
+                                    <form action="AddRemoveUserE.jsp" method="post">
                                         <div class="form-row">
                                             <div class="col">
                                                 <div class="form-group"><label><strong>First Name:</strong></label><input class="form-control" type="text" name="fName" inputmode="latin-name" required=""></div>

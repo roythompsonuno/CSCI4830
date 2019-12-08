@@ -19,7 +19,7 @@
 		System.out.print("\n\n\n\n\n\n\n\n\n");
 		user = (User) session.getAttribute("changeUser");
 		user.removeUser();
-		response.sendRedirect("AddRemoveUser.jsp");
+		response.sendRedirect("AddRemoveUserE.jsp");
 	}
 	else
 	{
@@ -78,7 +78,7 @@
 		{
 			user.getProfileData(request.getParameter("edituser"));
 			session.setAttribute("changeUser", (User) user);
-			response.sendRedirect("AddRemoveUser.jsp");
+			response.sendRedirect("AddRemoveUserE.jsp");
 		}
 	}
 %>
@@ -108,7 +108,7 @@
                                             <h2 class="text-primary">User ID: <%=user.getUserID() %></h2>
                                         </div>
                                     </div>
-                                    <form>
+                                    <form action="EditUserE.jsp">
                                         <div class="form-row">
                                             <div class="col">
                                                 <div class="form-group"><label><strong>First Name:</strong></label><input class="form-control" type="text" name="fName" required="" value="<%=user.getfName()%>"></div>
