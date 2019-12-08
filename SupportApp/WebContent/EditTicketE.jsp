@@ -60,20 +60,20 @@
 			ticket.updateTicket("Status_ID", request.getParameter("stat"));
 		}
 		
-		if(!request.getParameter("summary").equals("") && !request.getParameter("summary").equals(ticket.getSummary()))
-		{
-			update++;
-			ticket.updateTicket("Summary", request.getParameter("summary"));
-		}
-		else if(request.getParameter("summary").equals(""))
-		{
-			message = "Summary is required.";
-		}
-		
-		if(!request.getParameter("description").equals(ticket.getDescription()))
+		if(!request.getParameter("description").equals("") && !request.getParameter("description").equals(ticket.getDescription()))
 		{
 			update++;
 			ticket.updateTicket("Description", request.getParameter("description"));
+		}
+		else if(request.getParameter("description").equals(""))
+		{
+			message = "Description is required.";
+		}
+		
+		if(!request.getParameter("solution").equals(ticket.getSolution()))
+		{
+			update++;
+			ticket.updateTicket("Solution", request.getParameter("Solution"));
 		}
 		
 		if(Integer.parseInt(request.getParameter("assign")) != ticket.getAssignee())
@@ -156,7 +156,7 @@
             <div class="form-row">
                 <div class="col"><label><strong>Description:&nbsp;</strong></label><textarea class="form-control" name="description" value="<%=desc %>"></textarea></div>
                 <div class="col">
-                    <div class="form-group"><label><strong>Solution:&nbsp;</strong></label><textarea class="form-control" name="summary" value="<%=ticket.getSummary() %>"></textarea></div>
+                    <div class="form-group"><label><strong>Solution:&nbsp;</strong></label><textarea class="form-control" name="solution" value="<%=ticket.getSolution() %>"></textarea></div>
                 </div>
             </div>
             <div class="form-row">

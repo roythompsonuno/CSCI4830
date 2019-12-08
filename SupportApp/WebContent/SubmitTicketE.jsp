@@ -15,17 +15,17 @@
 	
 	if(request.getParameter("submit") != null)
 	{
-		if(request.getParameter("summary").equals(""))
+		if(request.getParameter("description").equals(""))
 		{
-			message = "Summary is Required.";
+			message = "Description is Required.";
 		}
 		else
 		{
-			ticket.setSummary(request.getParameter("summary"));
+			ticket.setDescription(request.getParameter("description"));
 			
-			if(!request.getParameter("description").equals(""))
+			if(!request.getParameter("solution").equals(""))
 			{
-				ticket.setDescription(request.getParameter("description"));
+				ticket.setSolution(request.getParameter("solution"));
 			}
 			
 			ticket.setImpactID(Integer.parseInt(request.getParameter("impact")));
@@ -89,12 +89,12 @@
                     	if(user.isSupport()) 
                     	{
                     	%>
-                        	<div class="form-group"><label><strong>Solution:&nbsp;</strong></label><textarea class="form-control" name="summary"></textarea></div>
+                        	<div class="form-group"><label><strong>Solution:&nbsp;</strong></label><textarea class="form-control" name="solution"></textarea></div>
                     	<%
                     	}
                     	else {
                     	%>
-                    		<div class="form-group"><label><strong>Solution:&nbsp;</strong></label><textarea class="form-control" name="summary" readonly=""></textarea></div>
+                    		<div class="form-group"><label><strong>Solution:&nbsp;</strong></label><textarea class="form-control" name="solution" readonly=""></textarea></div>
                     	<%
                     	}
                     %>

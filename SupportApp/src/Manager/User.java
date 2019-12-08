@@ -202,7 +202,7 @@ public class User {
 			DatabaseConnection.getDBConnection();
 			connect = DatabaseConnection.connection;
 			
-			String selectSQL = "SELECT a.Ticket_Number, b.Impact_Name, a.Summary, c.Status_Name FROM Ticket a " +
+			String selectSQL = "SELECT a.Ticket_Number, b.Impact_Name, a.Description, c.Status_Name FROM Ticket a " +
 							"INNER JOIN Impact b ON a.Impact_ID = b.Impact_ID " +
 							"INNER JOIN Status c ON a.Status_ID = c.Status_ID " +
 							"WHERE " + id + " LIKE ?;";
@@ -215,7 +215,7 @@ public class User {
 				
 				out.print("<tr><td class=\"data\">"+ results.getInt("Ticket_Number") +
 						"</td><td class=\"data\">" + results.getString("Impact_Name") +
-						"</td><td class=\"data\">" + results.getString("Summary") +
+						"</td><td class=\"data\">" + results.getString("Description") +
 						"</td><td class=\"data\">" + results.getString("Status_Name") + "</td>");
 				if(isSupport())
 				{
@@ -271,7 +271,7 @@ public class User {
 			DatabaseConnection.getDBConnection();
 			connect = DatabaseConnection.connection;
 			
-			String selectSQL = "SELECT a.Ticket_Number, b.Impact_Name, a.Summary, c.Status_Name FROM Ticket a " +
+			String selectSQL = "SELECT a.Ticket_Number, b.Impact_Name, a.Description, c.Status_Name FROM Ticket a " +
 							"INNER JOIN Impact b ON a.Impact_ID = b.Impact_ID " +
 							"INNER JOIN Status c ON a.Status_ID = c.Status_ID " +
 							"WHERE " + id + " IS NULL;";
@@ -283,7 +283,7 @@ public class User {
 				
 				out.print("<tr><td class=\"data\">"+ results.getInt("Ticket_Number") +
 						"</td><td class=\"data\">" + results.getString("Impact_Name") +
-						"</td><td class=\"data\">" + results.getString("Summary") +
+						"</td><td class=\"data\">" + results.getString("Description") +
 						"</td><td class=\"data\">" + results.getString("Status_Name") + "</td>");
 				if(isSupport())
 				{

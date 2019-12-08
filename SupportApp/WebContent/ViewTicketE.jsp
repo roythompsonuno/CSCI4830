@@ -37,7 +37,7 @@
                                             <tr class="border rounded">
                                                 <th style="width: 100px;font-family: 'Roboto Slab', serif;">Ticket #</th>
                                                 <th style="width: em;font-family: 'Roboto Slab', serif;">Impact</th>
-                                                <th style="font-family: 'Roboto Slab', serif;" colspan="1">Summary</th>
+                                                <th style="font-family: 'Roboto Slab', serif;" colspan="1">Description</th>
                                                 <th style="font-family: 'Roboto Slab', serif;">Status</th>
                                                 <%
                                                 	if( user.isSupport())
@@ -64,7 +64,7 @@
                                             <tr class="border rounded">
                                                 <th style="width: 100px;font-family: 'Roboto Slab', serif;">Ticket #</th>
                                                 <th style="width: em;font-family: 'Roboto Slab', serif;">Impact</th>
-                                                <th style="font-family: 'Roboto Slab', serif;" colspan="1">Summary</th>
+                                                <th style="font-family: 'Roboto Slab', serif;" colspan="1">Description</th>
                                                 <th style="font-family: 'Roboto Slab', serif;">Status</th>
                                                 <th style="font-family: 'Roboto Slab', serif;">Edit</th>
                                             </tr>
@@ -83,7 +83,7 @@
                                             <tr class="border rounded">
                                                 <th style="width: 100px;font-family: 'Roboto Slab', serif;">Ticket #</th>
                                                 <th style="width: em;font-family: 'Roboto Slab', serif;">Impact</th>
-                                                <th style="font-family: 'Roboto Slab', serif;" colspan="1">Summary</th>
+                                                <th style="font-family: 'Roboto Slab', serif;" colspan="1">Description</th>
                                                 <th style="font-family: 'Roboto Slab', serif;">Status</th>
                                                 <th style="font-family: 'Roboto Slab', serif;">Edit</th>
                                             </tr>

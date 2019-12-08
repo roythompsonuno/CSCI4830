@@ -14,7 +14,7 @@ public class Ticket
 {
 	private int ticketID, userID, assignee, impactID, catID, statID;
 	private Date submitDate;
-	private String summary, description, impact, category, status;
+	private String solution, description, impact, category, status;
 	
 	
 	public void getTicket(String id)
@@ -44,7 +44,7 @@ public class Ticket
 			this.catID = results.getInt("Category_ID");
 			this.statID = results.getInt("Status_ID");
 			this.submitDate = results.getDate("Submit_Date");
-			this.summary = results.getString("Summary");
+			this.solution = results.getString("Solution");
 			this.description = results.getString("Description");
 			this.impact = results.getString("Impact_Name");
 			this.category = results.getString("Category_Name");
@@ -477,7 +477,7 @@ public class Ticket
 			
 			String insertSQL = "INSERT INTO Ticket VALUES (DEFAULT, NOW(), ?, ?, ?, ?, 1, ?, NULL);";
 			prepStatement = connect.prepareStatement(insertSQL);
-			prepStatement.setString(1, this.summary);
+			prepStatement.setString(1, this.solution);
 			prepStatement.setString(2, this.description);
 			prepStatement.setInt(3, this.impactID);
 			prepStatement.setInt(4, this.catID);
@@ -555,17 +555,6 @@ public class Ticket
 		this.submitDate = submitDate;
 	}
 
-
-	public String getSummary() {
-		return summary;
-	}
-
-
-	public void setSummary(String summary) {
-		this.summary = summary;
-	}
-
-
 	public String getDescription() {
 		return description;
 	}
@@ -575,6 +564,14 @@ public class Ticket
 		this.description = description;
 	}
 
+	public String getSolution() {
+		return solution;
+	}
+
+
+	public void setSolution(String solution) {
+		this.solution = solution;
+	}
 
 	public String getImpact() {
 		return impact;

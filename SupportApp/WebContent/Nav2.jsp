@@ -53,7 +53,6 @@
                     		<%
 						}
 					%>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="FAQE.jsp" style="padding-top: 2px;padding-bottom: 2px;"><span>FAQ</span></a></li>
                <%}
 				 else
 				 {
