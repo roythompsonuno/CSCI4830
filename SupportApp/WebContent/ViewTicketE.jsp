@@ -13,7 +13,6 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-4"><a class="btn btn-primary btn-block btn-lg" role="button" style="height: 60px;" href="SubmitTicketE.jsp">Create Ticket</a></div>
-                    <div class="col-4 offset-0"><input class="form-control-lg" type="search" name="Search Tickets" placeholder="Search" style="width: 300px;height: 60px;"></div>
                     <div class="col"></div>
                 </div>
                 <div class="col">
@@ -102,21 +101,18 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-12" style="height: 396px;">
-                        <div class="row">
-                            <div class="col">
-                                <h2 class="text-center text-primary">Support Metrics</h2>
-                            </div>
-                        </div>
-                        <div style="height: 343px;"><canvas data-bs-chart="{&quot;type&quot;:&quot;line&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;January&quot;,&quot;February&quot;,&quot;March&quot;,&quot;April&quot;,&quot;May&quot;,&quot;June&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;Revenue&quot;,&quot;backgroundColor&quot;:&quot;rgba(223,139,78,0.18)&quot;,&quot;borderColor&quot;:&quot;#df684e&quot;,&quot;data&quot;:[&quot;4500&quot;,&quot;5300&quot;,&quot;6250&quot;,&quot;7800&quot;,&quot;9800&quot;,&quot;15000&quot;],&quot;fill&quot;:true,&quot;borderWidth&quot;:&quot;3&quot;}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:false,&quot;legend&quot;:{&quot;display&quot;:true,&quot;reverse&quot;:false},&quot;title&quot;:{&quot;display&quot;:false},&quot;scales&quot;:{&quot;xAxes&quot;:[{&quot;gridLines&quot;:{&quot;drawBorder&quot;:true,&quot;drawOnChartArea&quot;:true},&quot;ticks&quot;:{&quot;beginAtZero&quot;:false}}],&quot;yAxes&quot;:[{&quot;gridLines&quot;:{&quot;drawBorder&quot;:true},&quot;ticks&quot;:{&quot;beginAtZero&quot;:false}}]}}}"></canvas></div>
-                    </div>
+                 <%
+                     if( user.isSupport())
+                     {
+                 %>
                     <div class="col-lg-6" style="height: 290px;">
-                        <div><canvas data-bs-chart="{&quot;type&quot;:&quot;doughnut&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;January&quot;,&quot;February&quot;,&quot;March&quot;,&quot;April&quot;,&quot;May&quot;,&quot;June&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;Per Department&quot;,&quot;backgroundColor&quot;:[&quot;#00b5d6&quot;,&quot;#f97242&quot;,&quot;#54d8a8&quot;,&quot;#9bafc4&quot;,&quot;#1e7a6d&quot;,&quot;#f95602&quot;],&quot;borderColor&quot;:[&quot;rgba(78,115,223,0.91)&quot;,&quot;rgba(78,115,223,0.91)&quot;,&quot;rgba(78,115,223,0.91)&quot;,&quot;rgba(78,115,223,0.91)&quot;,&quot;rgba(78,115,223,0.91)&quot;,&quot;rgba(78,115,223,0.91)&quot;],&quot;data&quot;:[&quot;4500&quot;,&quot;5300&quot;,&quot;6250&quot;,&quot;7800&quot;,&quot;9800&quot;,&quot;15000&quot;]}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:true,&quot;legend&quot;:{&quot;display&quot;:true},&quot;title&quot;:{}}}"></canvas></div>
+                        <div><canvas data-bs-chart="{&quot;type&quot;:&quot;doughnut&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;Software Issue&quot;,&quot;Hardware Issue&quot;,&quot;Profile Issue&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;Per Department&quot;,&quot;backgroundColor&quot;:[&quot;#00b5d6&quot;,&quot;#f97242&quot;,&quot;#54d8a8&quot;],&quot;borderColor&quot;:[&quot;rgba(78,115,223,0.91)&quot;,&quot;rgba(78,115,223,0.91)&quot;,&quot;rgba(78,115,223,0.91)&quot;,&quot;rgba(78,115,223,0.91)&quot;,&quot;rgba(78,115,223,0.91)&quot;,&quot;rgba(78,115,223,0.91)&quot;],&quot;data&quot;:[&quot;<%=user.getTicketCount(1) %>&quot;,&quot;<%=user.getTicketCount(2) %>&quot;,&quot;<%=user.getTicketCount(3) %>&quot;]}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:true,&quot;legend&quot;:{&quot;display&quot;:true},&quot;title&quot;:{}}}"></canvas></div>
                     </div>
                     <div class="col-lg-6">
-                        <div><canvas data-bs-chart="{&quot;type&quot;:&quot;bar&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;January&quot;,&quot;February&quot;,&quot;March&quot;,&quot;April&quot;,&quot;May&quot;,&quot;June&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;Revenue&quot;,&quot;backgroundColor&quot;:&quot;#4e73df&quot;,&quot;borderColor&quot;:&quot;#4e73df&quot;,&quot;data&quot;:[&quot;4500&quot;,&quot;5300&quot;,&quot;6250&quot;,&quot;7800&quot;,&quot;9800&quot;,&quot;15000&quot;]}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:true,&quot;legend&quot;:{&quot;display&quot;:true},&quot;title&quot;:{}}}"></canvas></div>
+                        <div><canvas data-bs-chart="{&quot;type&quot;:&quot;bar&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;Assigned&quot;,&quot;Unassigned&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;Ticket Status&quot;,&quot;backgroundColor&quot;:&quot;#4e73df&quot;,&quot;borderColor&quot;:&quot;#4e73df&quot;,&quot;data&quot;:[&quot;<%=user.getTicketStatus(2) %>&quot;,&quot;<%=user.getTicketStatus(1) %>&quot;]}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:true,&quot;legend&quot;:{&quot;display&quot;:true},&quot;title&quot;:{}}}"></canvas></div>
                     </div>
                 </div>
+                <% } %>
             </div>
         </div>
         <footer class="bg-white sticky-footer">

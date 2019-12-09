@@ -142,6 +142,153 @@ public class User {
 		}
 	}
 	
+	public int getTicketCount(int ID)
+	{
+		Connection connect = null;
+		PreparedStatement prepStatement = null;
+		int count = 0;
+		
+		try
+		{
+			DatabaseConnection.getDBConnection();
+			connect = DatabaseConnection.connection;
+			
+			String selectSQL = "SELECT Category_ID, COUNT(*) " +
+								"FROM Ticket " +
+								"GROUP BY Category_ID " +
+								"ORDER BY Category_ID ASC;";
+			prepStatement = connect.prepareStatement(selectSQL);
+			ResultSet results = prepStatement.executeQuery();
+			
+			if(results.next())
+			{
+				switch(ID){
+					case 1 :
+						return results.getInt("COUNT(*)");
+					case 2 :
+						if(results.next())
+							return results.getInt("COUNT(*)");
+						else
+							return 0;
+					case 3 :
+						if(results.next()) {
+							if(results.next())
+								return results.getInt("COUNT(*)");
+							else 
+								return 0;
+						}
+						else 
+							return 0;
+				}
+			}
+			
+			
+			results.close();
+	        prepStatement.close();
+	        connect.close();
+		}
+		catch (SQLException se) 
+		{
+			se.printStackTrace();
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		} 
+		finally 
+		{
+			try 
+			{
+				if (prepStatement != null)
+					prepStatement.close();
+			} 
+			catch (SQLException se2) {}
+			
+			try 
+			{
+				if (connect != null)
+					connect.close();
+			} 
+			catch (SQLException se) 
+			{
+				se.printStackTrace();
+			}
+		}
+		return count;
+	}
+	
+	public int getTicketStatus(int ID)
+	{
+		Connection connect = null;
+		PreparedStatement prepStatement = null;
+		int count = 0;
+		int statID = 0;
+		
+		try
+		{
+			DatabaseConnection.getDBConnection();
+			connect = DatabaseConnection.connection;
+			
+			String selectSQL = "SELECT Status_ID, COUNT(*) " +
+								"FROM Ticket " +
+								"GROUP BY Status_ID " +
+								"ORDER BY Status_ID ASC;";
+			prepStatement = connect.prepareStatement(selectSQL);
+			ResultSet results = prepStatement.executeQuery();
+			
+			if(results.next())
+			{
+				statID = results.getInt("Status_ID");
+				
+				switch(ID){
+					case 1 :
+						if( statID == 1 )
+							return results.getInt("COUNT(*)");
+						else
+							return 0;
+					case 2 :
+						if(results.next() || statID == 2)
+							return results.getInt("COUNT(*)");
+						else
+							return 0;
+
+				}
+			}
+			
+			
+			results.close();
+	        prepStatement.close();
+	        connect.close();
+		}
+		catch (SQLException se) 
+		{
+			se.printStackTrace();
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		} 
+		finally 
+		{
+			try 
+			{
+				if (prepStatement != null)
+					prepStatement.close();
+			} 
+			catch (SQLException se2) {}
+			
+			try 
+			{
+				if (connect != null)
+					connect.close();
+			} 
+			catch (SQLException se) 
+			{
+				se.printStackTrace();
+			}
+		}
+		return count;
+	}
 	public void updatePassword(String newPass)
 	{
 		Connection connect = null;

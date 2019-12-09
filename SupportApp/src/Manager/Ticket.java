@@ -541,7 +541,7 @@ public class Ticket
 	}
 
 
-	public void setAssigne(int assignee) {
+	public void setAssignee(int assignee) {
 		this.assignee = assignee;
 	}
 

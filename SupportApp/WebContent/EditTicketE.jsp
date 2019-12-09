@@ -141,8 +141,8 @@
                     <form name="ticketEdit" action="EditTicketE.jsp">
                         <div class="form-row">
                             <div class="col">
-                                <div class="form-group"><label><strong>First Name:</strong></label><input class="form-control" type="text" readonly=""><%ticket.getUserName(1); %></div>
-                                <div class="form-group"><label><strong>Last Name:&nbsp;</strong></label><input class="form-control" type="text" readonly=""><%ticket.getUserName(2); %></div>
+                                <div class="form-group"><label><strong>First Name:</strong></label><input class="form-control" type="text" readonly="" value="<%=ticket.getUserName(1) %>"></div>
+                                <div class="form-group"><label><strong>Last Name:&nbsp;</strong></label><input class="form-control" type="text" readonly="" value="<%=ticket.getUserName(2) %>"></div>
                             </div>
                             <div class="col">
                                 <div class="form-group"><label><strong>Category</strong>:&nbsp;</label><select class="form-control" name="categ"><%ticket.getList(out, "Category", ticket.getCategory()); %></select></div>
@@ -154,7 +154,7 @@
                 </div>
             </div>
             <div class="form-row">
-                <div class="col"><label><strong>Description:&nbsp;</strong></label><textarea class="form-control" name="description" value="<%=desc %>"></textarea></div>
+                <div class="col"><label><strong>Description:&nbsp;</strong></label><textarea class="form-control" name="description" value="<%=ticket.getDescription() %>"></textarea></div>
                 <div class="col">
                     <div class="form-group"><label><strong>Solution:&nbsp;</strong></label><textarea class="form-control" name="solution" value="<%=ticket.getSolution() %>"></textarea></div>
                 </div>

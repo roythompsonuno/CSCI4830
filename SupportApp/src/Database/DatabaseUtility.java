@@ -11,7 +11,7 @@ public class DatabaseUtility {
    static String _PROP_FILENAME_WIN_LOCAL = "C:\\Users\\Bryson Yumul\\Desktop\\Test_Workspace\\Test_HelpDesk\\WebContent\\config.properties";
    static String _PROP_FILENAME_OSX_LOCAL = "/Users/ericrowe/Documents/GitHub/CSCI4830/SupportApp/WebContent/config.properties";
    // * Remote server path
-   static String _PROP_FILENAME_REMOTE = "/var/lib/tomcat7/webapps/HelpDesk/config.properties";
+   static String _PROP_FILENAME_REMOTE = "/var/lib/tomcat7/webapps/SupportApp/WebContent/config.properties";
    static Properties prop = new Properties();
 
    public static void loadProperty() throws Exception {
